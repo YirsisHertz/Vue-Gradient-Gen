@@ -11,6 +11,7 @@ const app = Vue.createApp({
       title: "Gradient Generator",
       color1: "#000000",
       color2: "#ffffff",
+      gradient_direction: 1,
     };
   },
   computed: {
@@ -21,7 +22,15 @@ const app = Vue.createApp({
       return this.color2;
     },
     set_gradient() {
-      return `background: linear-gradient(to right, ${this.color1}, ${this.color2});`;
+      if (this.gradient_direction == 2) {
+        return `background: linear-gradient(to left, ${this.color1}, ${this.color2});`;
+      } else if (this.gradient_direction == 3) {
+        return `background: linear-gradient(to top, ${this.color1}, ${this.color2});`;
+      } else if (this.gradient_direction == 4) {
+        return `background: linear-gradient(to bottom, ${this.color1}, ${this.color2});`;
+      } else {
+        return `background: linear-gradient(to right, ${this.color1}, ${this.color2});`;
+      }
     },
   },
 });

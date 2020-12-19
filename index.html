@@ -56,6 +56,52 @@
       <span class="value"> {{color_one}} </span>
 
       <span class="value"> {{color_two}} </span>
+
+      <br />
+
+      <div class="input-container">
+        <div>
+          <input
+            class="radio"
+            type="radio"
+            name="gradient-right"
+            v-model.number="gradient_direction"
+            value="1"
+          />
+          <label for="gradient-right" class="text">Right</label>
+        </div>
+        <div>
+          <input
+            class="radio"
+            type="radio"
+            name="gradient-left"
+            v-model.number="gradient_direction"
+            value="2"
+          />
+          <label for="gradient-left" class="text">Left</label>
+        </div>
+        <div>
+          <input
+            class="radio"
+            type="radio"
+            name="gradient-top"
+            v-model.number="gradient_direction"
+            value="3"
+          />
+          <label for="gradient-top" class="text">Top</label>
+        </div>
+        <div>
+          <input
+            class="radio"
+            type="radio"
+            name="gradient-bottom"
+            v-model.number="gradient_direction"
+            value="4"
+          />
+          <label for="gradient-bottom" class="text">Bottom</label>
+        </div>
+      </div>
+
       <div class="css-property">
         <input class="css-value" type="text" :value="set_gradient" />
       </div>

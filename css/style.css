@@ -20,6 +20,10 @@ body {
   padding: 1rem 0;
 }
 
+.radio {
+  justify-items: right;
+}
+
 .color {
   border: none;
   height: 40px;
