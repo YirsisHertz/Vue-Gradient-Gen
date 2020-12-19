@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- PWA Metadata -->
+    <meta name="theme-color" content="#9869dd" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <title>Vue Gradient</title>
+
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Icons Config -->
+
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./img/favicon.png" />
+    <link rel="apple-touch-startup-image" href="./img/favicon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{title}}</h1>
+
+      <hr />
+
+      <div class="input-container">
+        <div>
+          <label class="text" for="color1">Color 1: </label>
+          <input class="color" type="color" name="color1" v-model="color1" />
+        </div>
+        <div>
+          <label class="text" for="color2">Color 2: </label>
+          <input class="color" type="color" name="color2" v-model="color2" />
+        </div>
+      </div>
+
+      <hr />
+
+      <span class="value"> {{color_one}} </span>
+
+      <span class="value"> {{color_two}} </span>
+      <div class="css-property">
+        <input class="css-value" type="text" :value="set_gradient" />
+      </div>
+
+      <div class="gradient-zone" :style="set_gradient"></div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+  </body>
+</html>
