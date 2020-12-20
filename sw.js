@@ -1,6 +1,7 @@
 const CACHE_NAME = "v1_cache_gradient_gen",
   urlsToCache = [
     "./",
+    "./?umt_source=web_app_manifest",
     "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
     "./img/favicon.ico",
     "./img/favicon.png",
@@ -20,8 +21,11 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches
       .open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(urlsToCache).then(() => self.skipWaiting());
+      .then(async (cache) => {
+        const cacheResp = await cache
+          .addAll(urlsToCache)
+          .then(() => self.skipWaiting());
+        return cacheResp;
       })
       .catch((err) => console.log(err))
   );
@@ -52,7 +56,7 @@ self.addEventListener("fetch", (e) => {
         return res;
       }
 
-      return fetch(e.request);
+      return fetch(e.request).catch((err) => console.log(err));
     })
   );
 });

@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta
+      name="description"
+      content="Generador de degradados en tiempo real, Adaptada para dispositivos moviles, aplicacion web y de escritorio."
+    />
+
     <!-- PWA Metadata -->
     <meta name="theme-color" content="#9869dd" />
     <meta name="MobileOptimized" content="width" />
@@ -43,11 +48,11 @@
       <div class="input-container">
         <div>
           <label class="text" for="color1">Color 1: </label>
-          <input class="color" type="color" name="color1" v-model="color1" />
+          <input class="color" type="color" id="color1" v-model="color1" />
         </div>
         <div>
           <label class="text" for="color2">Color 2: </label>
-          <input class="color" type="color" name="color2" v-model="color2" />
+          <input class="color" type="color" id="color2" v-model="color2" />
         </div>
       </div>
 
@@ -64,7 +69,7 @@
           <input
             class="radio"
             type="radio"
-            name="gradient-right"
+            id="gradient-right"
             v-model.number="gradient_direction"
             value="1"
           />
@@ -74,7 +79,7 @@
           <input
             class="radio"
             type="radio"
-            name="gradient-left"
+            id="gradient-left"
             v-model.number="gradient_direction"
             value="2"
           />
@@ -84,7 +89,7 @@
           <input
             class="radio"
             type="radio"
-            name="gradient-top"
+            id="gradient-top"
             v-model.number="gradient_direction"
             value="3"
           />
@@ -97,13 +102,16 @@
             name="gradient-bottom"
             v-model.number="gradient_direction"
             value="4"
+            id="gradient-bottom"
           />
           <label for="gradient-bottom" class="text">Bottom</label>
         </div>
       </div>
 
       <div class="css-property">
-        <input class="css-value" type="text" :value="set_gradient" />
+        <label>
+          <input class="css-value" type="text" :value="set_gradient" />
+        </label>
       </div>
 
       <div class="gradient-zone" :style="set_gradient"></div>
