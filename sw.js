@@ -21,11 +21,10 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches
       .open(CACHE_NAME)
-      .then(async (cache) => {
-        const cacheResp = await cache
+      .then((cache) => {
+        return cache
           .addAll(urlsToCache)
           .then(() => self.skipWaiting());
-        return cacheResp;
       })
       .catch((err) => console.log(err))
   );
